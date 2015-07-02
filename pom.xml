@@ -35,10 +35,10 @@
             <!-- 开发环境 -->
             <id>dev</id>
             <properties>                
-                <db-url><![CDATA[jdbc:mysql://www.baidu.com:3306/weixin?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true]]></db-url>
+                <db-url><![CDATA[jdbc:mysql://sqld.duapp.com:4050/tAxHTblXofbKFyiuwtgh?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true]]></db-url>
                 <db-driverClass>com.mysql.jdbc.Driver></db-driverClass>
-                <db-username>root</db-username>
-                <db-password>admin</db-password>
+                <db-username>07SaCBnfF1sroX10wYrirlCZ</db-username>
+                <db-password>9D5WfPZAx8Np9s3OzeOVyjoFgIQuiDEm</db-password>
                 <db-maxPoolSize>5</db-maxPoolSize>
             </properties>
             <!-- 默认激活本环境 -->
