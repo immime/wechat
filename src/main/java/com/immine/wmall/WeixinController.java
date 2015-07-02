@@ -5,7 +5,10 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.immine.wechat.handle.EventHandle;
@@ -22,26 +25,17 @@ import com.immine.wmall.handle.MyMessageHandle;
 public class WeixinController extends WeixinControllerSupport {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(WeixinController.class);
-	private static final String TOKEN = "myqiqi";
-	private static final String AES_KEY = "DvILSt6R9ciXQCP9rA7HusoEzEhPTKPUXKtYjCIiZxn";
-	private static final String APP_ID = "wxe6626fc25736c77e";
-
-	// 使用安全模式时设置：密钥
-	@Override
-	protected String getAESKey() {
-		return AES_KEY;
-	}
-
-	// 使用安全模式时设置：APPID
-	@Override
-	protected String getAppId() {
-		return APP_ID;
-	}
+	@Value("${weixin.token}")
+	private String token;
+	@Value("${weixin.aesKey}")
+	private String aesKey;
+	@Value("${weixin.appID}")
+	private String appID;
 
 	// 设置TOKEN，用于绑定微信服务器
 	@Override
 	protected String getToken() {
-		return TOKEN;
+		return token;
 	}
 
 	// 重写父类方法，处理对应的微信消息
@@ -74,5 +68,11 @@ public class WeixinController extends WeixinControllerSupport {
 		handles.add(new MyEventHandle());
 		return handles;
 	}
+	
+	@RequestMapping(value="/test/{content}", produces="text/html;charset=UTF-8")
+    @ResponseBody
+    public String test(@PathVariable("content") String content) {
+        return content;
+    }
 
 }

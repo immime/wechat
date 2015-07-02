@@ -24,7 +24,7 @@ public abstract class WeixinControllerSupport extends WeixinSupport {
      * @param request 请求
      * @return 响应内容
      */
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, produces="text/html;charset=UTF-8")
     @ResponseBody
     protected final String bind(HttpServletRequest request) {
         if (isLegal(request)) {
@@ -44,7 +44,7 @@ public abstract class WeixinControllerSupport extends WeixinSupport {
      * @throws ServletException 异常
      * @throws IOException      IO异常
      */
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, produces="text/html;charset=UTF-8")
     @ResponseBody
     protected final String process(HttpServletRequest request) throws ServletException, IOException {
         if (!isLegal(request)) {
