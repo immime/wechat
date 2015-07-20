@@ -23,3 +23,6 @@
 #mac file
 .DS_STORE
 /bin/
+
+#Project log files
+/logs/

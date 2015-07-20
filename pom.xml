@@ -7,12 +7,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<repositories>
+	<!-- <repositories>
 		<repository>
 			<id>central</id>
 			<url>http://mvnrepository.com/</url>
 		</repository>
-	</repositories>
+	</repositories> -->
 
 	<!-- Inherit defaults from Spring Boot -->
 	<parent>
